@@ -1,9 +1,10 @@
 # execfile '/tmp/pcbnew.py'
 import pcbnew
 
-OFFSET_X = float(70)
+OFFSET_X = float(70 + (19.-18.5)*5)
 OFFSET_Y = float(70)
-PITCH = float(19)
+XPITCH = float(18.5)
+YPITCH = float(19.0)
 
 def set_position(ref, xp, yp, orientation = 0):
   module = pcb.FindModuleByReference(ref)
@@ -16,13 +17,13 @@ def set_matrix_position(ref_prefix, matrix):
       for xi, p in enumerate(rows):
         i += 1
         ref = "%s%s" % (ref_prefix, i)
-        xp = xi * PITCH + p[0]
-        yp = yi * PITCH + p[1]
+        xp = xi * XPITCH + p[0]
+        yp = yi * YPITCH + p[1]
         orientation = p[2]
         set_position(ref, xp, yp, orientation)
 
-  xp = xi * PITCH + p[0]
-  yp = yi * PITCH + p[1]
+  xp = xi * XPITCH + p[0]
+  yp = yi * YPITCH + p[1]
   orientation = p[2]
   set_position(ref, xp, yp, orientation)
 
@@ -68,27 +69,36 @@ pcb = pcbnew.GetBoard()
 #set_position('JP1', 105.5, 41, 0)
 
 # Switch
+THUMB_OFFSET = 3.5
+THUMB_ADJ_1 = 3
+
 set_matrix_position('SW', [
-    [[0, 0.375*PITCH, 180], [0, 0.375*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0.25*PITCH, 180]],
-    [[0, 0.375*PITCH, 180], [0, 0.375*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0.25*PITCH, 180]],
-    [[0, 0.375*PITCH, 180], [0, 0.375*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0*PITCH, 180], [0, 0.125*PITCH, 180], [0, 0.25*PITCH, 180]],
-                        [[3.5*PITCH, 0*PITCH+3, 180], [3.5*PITCH+2, 0.25*PITCH+1, 160], [3.5*PITCH+5.25, 0.25*PITCH+4.75, 240]]
+    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+                    [[THUMB_OFFSET*XPITCH-0.5, 0.25*YPITCH+1.5, 195],
+                        [THUMB_OFFSET*XPITCH+2, 0.25*YPITCH, 180],
+                            [THUMB_OFFSET*XPITCH+4.50, 0.25*YPITCH+1.5, 165]]
 ])
 
 # Diode
 set_matrix_position('D', [
-    [[-8, 0.375*PITCH, 270], [8, 0.375*PITCH, 270], [8, 0.125*PITCH, 270], [8, 0*PITCH, 270], [8, 0.125*PITCH, 270], [-8, 0.25*PITCH-2.375, 270]],
-    [[-8, 0.375*PITCH, 270], [8, 0.375*PITCH, 270], [8, 0.125*PITCH, 270], [8, 0*PITCH, 270], [8, 0.125*PITCH, 270], [-8, 0.25*PITCH-2.375, 270]],
-    [[-8, 0.375*PITCH, 270], [8, 0.375*PITCH, 270], [8, 0.125*PITCH, 270], [8, 0*PITCH, 270], [8, 0.125*PITCH, 270], [-8, 0.25*PITCH-2.375, 270]],
-                   [[3.5*PITCH-8, 0*PITCH+3, 270], [3.5*PITCH-11, 0.25*PITCH-2, 270], [3.5*PITCH-27, 0.25*PITCH-2, 270]]
+    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+                    [[THUMB_OFFSET*XPITCH+7.5, 0.25*YPITCH-2.0+1.5, 285],
+                        [THUMB_OFFSET*XPITCH-6.25, 0.25*YPITCH, 270],
+                            [THUMB_OFFSET*XPITCH-3.5, 0.25*YPITCH+0.0, 255]]
 ])
 
 # LED
 set_matrix_position('L', [
-    [[0, 0.375*PITCH-5.5, 0], [0, 0.375*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0.25*PITCH-5.5, 0]],
-    [[0, 0.375*PITCH-5.5, 0], [0, 0.375*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0.25*PITCH-5.5, 0]],
-    [[0, 0.375*PITCH-5.5, 0], [0, 0.375*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0*PITCH-5.5, 0], [0, 0.125*PITCH-5.5, 0], [0, 0.25*PITCH-5.5, 0]],
-                        [[3.5*PITCH, 0*PITCH-5.5+3, 0], [3.5*PITCH+3.5, 0.25*PITCH-5.25+1, 165], [3.5*PITCH+0.5, 0.25*PITCH+8.5-6.5, 240]]
+    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+                    [[THUMB_OFFSET*XPITCH-1.95, 0.25*YPITCH-5.5+1.8, 15],
+                        [THUMB_OFFSET*XPITCH+2, 0.25*YPITCH-5.5, 0],
+                            [THUMB_OFFSET*XPITCH+6.00, 0.25*YPITCH-5.5+1.75, -15]]
 ])
 
 #hole_xn = 8
