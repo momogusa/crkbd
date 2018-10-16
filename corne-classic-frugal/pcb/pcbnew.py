@@ -73,9 +73,9 @@ THUMB_OFFSET = 3.5
 THUMB_ADJ_1 = 3
 
 set_matrix_position('SW', [
-    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
-    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
-    [[0, 0.600*YPITCH, 180], [0, 0.500*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+    [[0, 0.800*YPITCH, 180], [0, 0.800*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+    [[0, 0.800*YPITCH, 180], [0, 0.800*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
+    [[0, 0.800*YPITCH, 180], [0, 0.800*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0*YPITCH, 180], [0, 0.125*YPITCH, 180], [0, 0.25*YPITCH, 180]],
                     [[THUMB_OFFSET*XPITCH-0.5, 0.25*YPITCH+1.5, 195],
                         [THUMB_OFFSET*XPITCH+2, 0.25*YPITCH, 180],
                             [THUMB_OFFSET*XPITCH+4.50, 0.25*YPITCH+1.5, 165]]
@@ -83,9 +83,9 @@ set_matrix_position('SW', [
 
 # Diode
 set_matrix_position('D', [
-    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
-    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
-    [[-8, 0.600*YPITCH, 270], [8, 0.500*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+    [[-8, 0.800*YPITCH, 270], [8, 0.800*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+    [[-8, 0.800*YPITCH, 270], [8, 0.800*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
+    [[-8, 0.800*YPITCH, 270], [8, 0.800*YPITCH, 270], [8, 0.125*YPITCH, 270], [8, 0*YPITCH, 270], [8, 0.125*YPITCH, 270], [-8, 0.25*YPITCH-2.375, 270]],
                     [[THUMB_OFFSET*XPITCH+7.5, 0.25*YPITCH-2.0+1.5, 285],
                         [THUMB_OFFSET*XPITCH-6.25, 0.25*YPITCH, 270],
                             [THUMB_OFFSET*XPITCH-3.5, 0.25*YPITCH+0.0, 255]]
@@ -93,9 +93,9 @@ set_matrix_position('D', [
 
 # LED
 set_matrix_position('L', [
-    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
-    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
-    [[0, 0.600*YPITCH-5.5, 0], [0, 0.500*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+    [[0, 0.800*YPITCH-5.5, 0], [0, 0.800*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+    [[0, 0.800*YPITCH-5.5, 0], [0, 0.800*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
+    [[0, 0.800*YPITCH-5.5, 0], [0, 0.800*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0*YPITCH-5.5, 0], [0, 0.125*YPITCH-5.5, 0], [0, 0.25*YPITCH-5.5, 0]],
                     [[THUMB_OFFSET*XPITCH-1.95, 0.25*YPITCH-5.5+1.8, 15],
                         [THUMB_OFFSET*XPITCH+2, 0.25*YPITCH-5.5, 0],
                             [THUMB_OFFSET*XPITCH+6.00, 0.25*YPITCH-5.5+1.75, -15]]
